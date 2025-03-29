@@ -3,6 +3,8 @@ from constants import *
 
 screen = pygame.display.set_mode(size=(SCREEN_WIDTH, SCREEN_HEIGHT))
 running = True
+clock = pygame.time.Clock()
+dt = 0
 
 while running:
     for event in pygame.event.get():
@@ -11,6 +13,7 @@ while running:
 
     pygame.Surface.fill(screen, color='black')  # put here screen var and color
     pygame.display.flip()
+    dt = clock.tick(60) / 1000
 
 
 def main():
